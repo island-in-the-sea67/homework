@@ -1,0 +1,12 @@
+def lower_bound3(nums: List[int], target: int) -> int:
+    left, right = -1, len(nums) 
+    while left + 1 < right: 
+        mid = (left + right) 
+        # 循环不变量：
+        # nums[left] < target
+        # nums[right] >= target
+        if nums[mid] < target:
+            left = mid 
+        else:
+            right = mid  
+    return right  
